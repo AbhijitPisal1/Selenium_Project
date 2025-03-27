@@ -14,7 +14,7 @@ public class GooglePageTest {
   @Test
   public void seleniumSearch() {
 	  
-	  // to test in specific version of version of Chrome use ChromeOptions -- provide browser version to be used as testing environment
+//	  // to test in specific version of version of Chrome use ChromeOptions -- provide browser version to be used as testing environment
 //	  ChromeOptions options = new ChromeOptions();
 //	  options.setBrowserVersion("120");
 //	  WebDriver driver = new ChromeDriver(options);
@@ -24,7 +24,7 @@ public class GooglePageTest {
 	  
 	  driver.manage().window().maximize();
 	  
-	  // to delete all cache and cookies
+//	  //to delete all cache and cookies
 	  driver.manage().deleteAllCookies();
 	  
 //	  driver.get("https://www.google.com/");
@@ -32,21 +32,30 @@ public class GooglePageTest {
 //	  Searchbox.sendKeys("Selenium tutorials");
 //	  Searchbox.sendKeys(Keys.ENTER);
 //  
-//	  driver.get("https://the-internet.herokuapp.com/login");
-	
-	  driver.navigate().to("https://the-internet.herokuapp.com/login");
+	  driver.get("https://the-internet.herokuapp.com/login");
+//	  driver.navigate().to("https://the-internet.herokuapp.com/login");
+	  
+	  
 //	  WebElement name = driver.findElement(By.id("username"));			// Always unique value-- more efficient
 	  WebElement name = driver.findElement(By.xpath("//input[@type='text' and @id='username']"));		// combination used - and- both conditions should be true
 	  name.sendKeys("tomsmith");
-	  
+//	  //the clear method - reset the entered text
+	  name.clear();	
+	  name.sendKeys("Welcometomsmith");
+	  name.clear();
+	  name.sendKeys("tomsmith");
+
 //	  WebElement pwd= driver.findElement(By.name("password"));
 	  WebElement pwd= driver.findElement(By.xpath("//input[@name='password' or @id='password']"));		// combination used - or - either one condition should be true
 	  pwd.sendKeys("SuperSecretPassword!");
+//	  pwd.sendKeys(Keys.ENTER);		// // instead of clicking on login button we can trigger ENTER action to submit the form
+	  								// // SendKeys - applies only on input fields
 	  
 //	  WebElement btnLogin= driver.findElement(By.className("radius"));	
 //	  WebElement btnLogin= driver.findElement(By.tagName("button"));		// HTML tag name is used-- can be multiple elements 
 	  WebElement btnLogin= driver.findElement(By.xpath("//i[@class='fa fa-2x fa-sign-in']"));
-	  btnLogin.click();
+//	  btnLogin.click();
+	  btnLogin.submit();
 	  
 //	  // navigate methods can also be used to open and navigate in application
 //	  driver.navigate().back();
@@ -56,6 +65,6 @@ public class GooglePageTest {
 	  
 //	  driver.findElement(By.linkText("Elemental Selenium")).click();	// for static link text where entire text string is known
 	  driver.findElement(By.partialLinkText("Elemental")).click();		// for dyanamic link text where text might change
-	  
+	  driver.quit();
   }
 }

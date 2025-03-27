@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-27T17:42:07 IST" name="Default suite" finished-at="2025-03-27T17:42:23 IST" duration-ms="15332">
+    <groups>
+    </groups>
+    <test started-at="2025-03-27T17:42:07 IST" name="Default test" finished-at="2025-03-27T17:42:23 IST" duration-ms="15332">
+      <class name="testScripts.MouseTest">
+        <test-method signature="practice()[pri:0, instance:testScripts.MouseTest@18df8434]" started-at="2025-03-27T17:42:08 IST" name="practice" finished-at="2025-03-27T17:42:23 IST" duration-ms="15233" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- practice -->
+      </class> <!-- testScripts.MouseTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
