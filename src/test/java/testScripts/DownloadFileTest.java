@@ -28,5 +28,7 @@ public class DownloadFileTest {
 	  
 	  actions.scrollByAmount(100, 900).perform();
 	  driver.findElement(By.xpath("//a[text() = '4.30.0']")).click();
+	  
+	  driver.quit();
   }
 }

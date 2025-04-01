@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SampleSuite">
+  <test thread-count="5" name="SampleTest">
+    <classes>
+      <class name="testScripts.DropdownTest"/>
+      <class name="testScripts.LambdaTestPage"/>
+      <class name="testScripts.ExplicitWaitTest"/>
+      <class name="testScripts.AutomationPracticePage"/>
+      <class name="testScripts.JSExecTest"/>
+      <class name="testScripts.MouseTest"/>
+      <class name="testScripts.ShadowDOMTest"/>
+      <class name="testScripts.AutocompleteTest"/>
+      <class name="testScripts.AutomationBookstore"/>
+      <class name="testScripts.ToolTipTest"/>
+      <class name="testScripts.CheckboxTest"/>
+      <class name="testScripts.DemoblazeTest"/>
+      <class name="testScripts.SeleniumDev"/>
+      <class name="testScripts.RadioButtonTest"/>
+      <class name="testScripts.Windowhandletest"/>
+      <class name="testScripts.GooglePageTest"/>
+      <class name="testScripts.PageLoadTest"/>
+      <class name="testScripts.DownloadFileTest"/>
+      <class name="testScripts.AlertTest"/>
+      <class name="testScripts.UploadFileTest"/>
+      <class name="testScripts.RelativeLocators"/>
+    </classes>
+  </test> <!-- SampleTest -->
+</suite> <!-- SampleSuite -->

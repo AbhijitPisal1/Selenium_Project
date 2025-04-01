@@ -21,5 +21,7 @@ public class SeleniumDev {
 	  for (WebElement item:items) {
 		  System.out.println(item.getText());
 	  }
+	  driver.quit();
+  
   }
 }

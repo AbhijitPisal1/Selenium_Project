@@ -21,13 +21,13 @@ public class AutomationBookstore {
 	  driver.get("https://automationbookstore.dev/");
 	  
 //	// take screenshot of entire page
-	  TakesScreenshot screen = (TakesScreenshot)driver;
-	  File src = screen.getScreenshotAs(OutputType.FILE);
-	  String path = System.getProperty("user.dir")
-	  		+ "/screenshots/"+ "Evidence_"+System.currentTimeMillis() +".png";
-	  FileUtils.copyFile(src, new File(path));
-	  
-	  
+//	  TakesScreenshot screen = (TakesScreenshot)driver;
+//	  File src = screen.getScreenshotAs(OutputType.FILE);
+//	  String path = System.getProperty("user.dir")
+//	  		+ "/screenshots/"+ "Evidence_"+System.currentTimeMillis() +".png";
+//	  FileUtils.copyFile(src, new File(path));
+//	  
+//	  
 	  driver.findElement(By.id("searchBar")).sendKeys("test");
 	  Thread.sleep(5000);
 	  
@@ -36,10 +36,10 @@ public class AutomationBookstore {
 	  boolean status = closeIcon.isDisplayed();
 
 //	// Take screenshot of single element
-	  File srcImg	= closeIcon.getScreenshotAs(OutputType.FILE);
-	  String path1 = System.getProperty("user.dir")
-			  +"/screenshots/" + "Evidence_" +System.currentTimeMillis() +".png";
-	  FileUtils.copyFile(srcImg, new File(path1));
+//	  File srcImg	= closeIcon.getScreenshotAs(OutputType.FILE);
+//	  String path1 = System.getProperty("user.dir")
+//			  +"/screenshots/" + "Evidence_" +System.currentTimeMillis() +".png";
+//	  FileUtils.copyFile(srcImg, new File(path1));
 	  
 	  System.out.println("staus of closeIcon button is "+status);
 	  

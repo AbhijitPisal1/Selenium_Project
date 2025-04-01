@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testScripts.ToolTipTest">
+      <class name="testScripts.ExplicitWaitTest">
         <methods>
-          <include name="tooltip"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- testScripts.ToolTipTest -->
+      </class> <!-- testScripts.ExplicitWaitTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -18,5 +18,7 @@ public class RelativeLocators {
 			  .below(By.id("pid1")))
 			  .getDomAttribute("id");
 	  System.out.println(strID);
+	  
+	  driver.quit();
   }
 }

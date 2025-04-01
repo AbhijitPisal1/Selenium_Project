@@ -19,5 +19,8 @@ public class UploadFileTest {
 	  
 	  driver.findElement(By.xpath("//span[contains(text(),'Start upload')]")).click();
 	  
+	  
+	  driver.quit();
+	  
   }
 }

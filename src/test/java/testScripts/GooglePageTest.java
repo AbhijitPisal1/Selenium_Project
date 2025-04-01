@@ -66,5 +66,7 @@ public class GooglePageTest {
 //	  driver.findElement(By.linkText("Elemental Selenium")).click();	// for static link text where entire text string is known
 	  driver.findElement(By.partialLinkText("Elemental")).click();		// for dyanamic link text where text might change
 	  driver.quit();
-  }
+	  
+  	}
+  
 }
