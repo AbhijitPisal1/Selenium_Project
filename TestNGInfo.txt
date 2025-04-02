@@ -1,0 +1,116 @@
+Configuration information for a TestNG class:
+
+Imagine a test suite with multiple classes and methods. The execution flow would be:
+
+@BeforeSuite: The annotated method will be run before all tests in this suite have run.
+@BeforeTest: The annotated method will be run before any test method belonging to the classes inside the <test> tag is run.
+@BeforeClass: The annotated method will be run before the first test method in the current class is invoked.
+@BeforeMethod: The annotated method will be run before each test method.
+@Test (the test method itself)
+@AfterMethod: The annotated method will be run after each test method.
+@AfterClass: The annotated method will be run after all the test methods in the current class have been run.
+@AfterTest: The annotated method will be run after all the test methods belonging to the classes inside the <test> tag have run.
+@AfterSuite: The annotated method will be run after all tests in this suite have run.
+
+Additionally, 
+@BeforeGroups: The list of groups that this configuration method will run before. This method is guaranteed to run shortly before the first test method that belongs to any of these groups is invoked.
+@AfterGroups: The list of groups that this configuration method will run after. This method is guaranteed to run shortly after the last test method that belongs to any of these groups is invoked.
+
+
+Behaviour of annotations in superclass of a TestNG class
+- The annotations above will also be honored (inherited) when placed on a superclass of a TestNG class.
+- This is useful for example to centralize test setup for multiple test classes in a common superclass.
+- In that case, TestNG guarantees that the "@Before" methods are executed in inheritance order (highest superclass first, then going down the inheritance chain), and the "@After" methods in reverse order (going up the inheritance chain).
+ 
+<!-- Sample of TestNG.xml file for hierarchy -->
+
+<!--hierarchy of execution is 
+SampleSuite 
+	> Test1 
+		> Script1 (sequencial @Test methods within as below )
+			> @Test Method1
+			> @Test Method2 etc..
+		> Script2 (sequencial @Test methods within it)
+	> Test2 
+		> Script3 (sequencial @Test methods within it)
+		> Script4 (sequencial @Test methods within it)
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SampleSuite" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test1">
+    <classes>
+      <class name="testScripts.Script1">
+      <class name="testScripts.Script2">
+    </classes>
+  </test>
+  <test thread-count="5" name="Test2">
+    <classes>
+      <class name="testScripts.Script3">
+      <class name="testScripts.Script4">
+    </classes>
+  </test>
+</suite> 
+
+
+<!-- Sample of TestNG.xml file for grouping include & exclude -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SampleSuite">
+	<groups>
+		<run>
+			<include name="FeatureOne"/> 
+			<!-- exclude name="FeatureOne"/-->
+		</run>
+	</groups>
+  <test thread-count="5" name="SampleTest">
+    <classes>
+      <class name="groupScripts.SampleOne"/>
+      <class name="groupScripts.SampleTwo"/>
+      <class name="groupScripts.SampleThree"/>
+    </classes>
+  </test> <!-- SampleTest -->
+</suite> <!-- SampleSuite -->
+
+
+<!-- Sample TestNG.xml for grouping of features by defining groups -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SampleSuite">
+<test thread-count="5" name="SampleTest">
+<groups>
+	<define name="SmokeTest">
+		<include name="FeatureOne"/> 
+		<include name="FeatureTwo"/> 
+	</define>
+	<define name="RegressionTest">
+		<include name="FeatureOne"/> 
+		<include name="FeatureThree"/> 
+		<include name="FeatureFour"/>
+	</define>
+		<run>
+			<include name="SmokeTest"/> 
+			<include name="RegressionTest"/>
+		</run>
+</groups>
+    <classes>
+      <class name="groupScripts.SampleOne"/>
+      <class name="groupScripts.SampleTwo"/>
+      <class name="groupScripts.SampleThree"/>
+    </classes>
+  </test> <!-- SampleTest -->
+</suite> <!-- SampleSuite -->
+
+
+<!-- Sample TestNG.xml for parametrization -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SampleSuite">
+  <test thread-count="5" name="SampleTest">
+  <parameter name="broswer" value="edge"></parameter>
+    <classes>
+      <class name="testScripts.BookSearchTest"/>
+    </classes>
+  </test> <!-- SampleTest -->
+</suite> <!-- SampleSuite -->
