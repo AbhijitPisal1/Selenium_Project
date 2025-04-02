@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SampleSuite">
+<test thread-count="5" name="SampleTest">
+<groups>
+	<define name="SmokeTest">
+		<include name="FeatureOne"/> 
+		<include name="FeatureTwo"/> 
+	</define>
+	<define name="RegressionTest">
+		<include name="FeatureOne"/> 
+		<include name="FeatureThree"/> 
+		<include name="FeatureFour"/>
+	</define>
+		<run>
+			<include name="SmokeTest"/> 
+			<include name="RegressionTest"/>
+		</run>
+</groups>
+
+    <classes>
+      <class name="groupScripts.SampleOne"/>
+      <class name="groupScripts.SampleTwo"/>
+      <class name="groupScripts.SampleThree"/>
+    </classes>
+  </test> <!-- SampleTest -->
+</suite> <!-- SampleSuite -->
+
+<!--hierarchy of execution is 
+SampleSuite 
+	> Test1 
+		> Script1 (sequencial @Test methods within as below )
+			> @Test Method1
+			> @Test Method2 etc..
+		> Script2 (sequencial @Test methods within it)
+	> Test2 
+		> Script3 (sequencial @Test methods within it)
+		> Script4 (sequencial @Test methods within it)
+-->
+

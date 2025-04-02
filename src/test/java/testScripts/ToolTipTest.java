@@ -21,7 +21,7 @@ public class ToolTipTest {
 	  driver.switchTo().frame(driver.findElement(By.cssSelector(".demo-frame")));
 //	  driver.switchTo().frame(0);
 	  WebElement age = driver.findElement(By.id("age"));
-	  age.sendKeys(Keys.ARROW_DOWN);
+//	  age.sendKeys(Keys.ARROW_DOWN);
 	  actions.moveToElement(age).perform();
 	  
 	  String strTxt = driver.findElement(By.className("ui-tooltip-content")).getText();

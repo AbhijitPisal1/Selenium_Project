@@ -27,8 +27,8 @@ public class AlertTest {
 	 Alert confirm = driver.switchTo().alert();
 	 System.out.println(confirm.getText());
 	 SoftAssert softasserts = new SoftAssert();							// if soft assert fails- script will not stop and continue running the script - passing it eventually
-	 softasserts.assertEquals(confirm.getText(), "Press a button");		// this will fail
-//	 softasserts.assertEquals(confirm.getText(), "Press a button!");	
+//	 softasserts.assertEquals(confirm.getText(), "Press a button");		// this will fail
+	 softasserts.assertEquals(confirm.getText(), "Press a button!");	
 	 confirm.dismiss();
 	 
 	 driver.findElement(By.id("promptBtn")).click();
