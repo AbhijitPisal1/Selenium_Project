@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParallelSuite" thread-count="2" parallel="tests">
+  <!-- test name="SampleTest" thread-count="2" parallel="methods"--> <!-- This will override the thread count given in suite setup-->
+  <test name="Test1">
+    <classes>
+      <class name="parallelScripts.SampleOneTest"/>
+      <!--class name="parallelScripts.SampleTwoTest"/-->
+      <!--class name="parallelScripts.SampleThreeTest"/-->
+    </classes>
+  </test> <!-- Test1 -->
+  
+  <test name="Test2">
+    <classes>
+      <class name="parallelScripts.SampleTwoTest"/>
+    </classes>
+  </test>
+  
+  <test name="Test3">
+    <classes>
+      <class name="parallelScripts.SampleThreeTest"/>
+    </classes>
+  </test>
+</suite> <!-- SampleSuite -->
+<!-- suite > tests > class > methods -->
+
+<!-- Thread count is basically a number of instances running to execute multiple tests simultaneously or in parallel.
+					The attribute thread-count allows the user to specify how many threads should be run for this execution-->
+					
+<!-- TestNG will launch the specified number of threads for each test, allowing for parallel execution of test methods within those tests. 
+	If you set parallel="methods" within a test, all methods within that test will run in parallel, using the defined thread count. 
+	If you set parallel="classes" within a test, all classes within that test will run in parallel, using the defined thread count. 
+	If you set parallel="tests" within a suite, all tests within that suite will run in parallel, using the defined thread count. 
+-->
+
+
+

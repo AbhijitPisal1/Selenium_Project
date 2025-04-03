@@ -1,9 +1,42 @@
 package parallelScripts;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class SampleTwoTest {
-  @Test
-  public void f() {
-  }
+	WebDriver driver;
+	@Test
+	  public void testone() {
+		  driver = new EdgeDriver();
+		  long id = Thread.currentThread().getId();
+		  System.out.println("Test21 in SampleTwo..."+id);
+	  }
+	@Test
+	  public void testTwo() {
+		  driver = new EdgeDriver();
+		  long id = Thread.currentThread().getId();
+		  System.out.println("Test22 in SampleTwo..."+id);
+	  }
+	
+	@Test
+	  public void testThree() {
+		  driver = new EdgeDriver();
+		  long id = Thread.currentThread().getId();
+		  System.out.println("Test23 in SampleTwo..."+id);
+	  }
+	
+	@Test
+	  public void testFour() {
+		  driver = new EdgeDriver();
+		  long id = Thread.currentThread().getId();
+		  System.out.println("Test24 in SampleTwo..."+id);
+	  }
+//	@AfterMethod
+	public void teardown() {
+		driver.close();
+		
+	}
 }
