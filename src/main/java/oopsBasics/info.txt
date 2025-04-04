@@ -1,0 +1,61 @@
+### Inheritance ###
+
+common code can be written in separate class and can be inherited in other classes.
+- code reusability
+- IS-A relationship
+- Parent-child relation
+- 'extends' keyword is used
+- data member are available to child class
+- one class can extend only one parent class
+- one class can be parent of multiple classes
+- same class cannot be parent of same class
+
+
+### Polymorphism ###
+
+Achieved by method overloading and method overriding
+No such concept for variables
+
+Method Overloading
+- many method with same name but different parameters in single class
+- compiler decides which method to run based on values provided
+- also known as "compile time Polymorphism " and "static Polymorphism  "
+
+Method Overriding
+- done by inheritance
+- same parent method with different implementation in child class
+- static method cannot be override
+- also known as "run time polymorphism" and "Dynamic Polymorphism"
+
+
+### Abstraction ###
+
+- hide internal details of implementation function
+- two ways - create abstract class and create interface
+
+interface 
+- blueprint of class
+- defines functionality without implementation
+- IS-A relationship
+- all methods in interface have to implemented in child class
+- class implements multiple interfaces
+- all methods in interface are by default "public abstract"
+- interface can have variable - by default it is public static final
+- no constructor or object are created for interface
+- static method can be created with implementation
+- interface can have only abstract methods
+- 100 % abstraction
+
+abstract class
+-created by abstract keyword
+- constructor has to be created
+- child class extends only one abstract class
+- partial abstraction
+- by default every variable is not public static
+
+
+## Encapsulation ##
+- Writing data member and methods in same class
+- wrapping the variable and its method in same class
+- public getter method - to get variable outside class
+- public setter - to set value that can be accessed outside

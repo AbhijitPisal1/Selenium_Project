@@ -21,31 +21,29 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 public class LoginTest {
-	
+
 	WebDriver driver;
 	Properties prop;
-	
+
 	@BeforeMethod
 	public void setup() throws IOException {
 		prop = new Properties();
-		String path = System.getProperty("user.dir")+"//src//test//resources//ConfigFiles//config.properties";
+		String path = System.getProperty("user.dir") + "//src//test//resources//ConfigFiles//config.properties";
 		FileInputStream fileIn = new FileInputStream(path);
 		prop.load(fileIn);
 		String strbrowser = prop.getProperty("browser");
 		if (strbrowser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
-		}
-		else if (strbrowser.equalsIgnoreCase("edge")) {
+		} else if (strbrowser.equalsIgnoreCase("edge")) {
 			driver = new EdgeDriver();
 		}
-		
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().window().maximize(); 
+		driver.manage().window().maximize();
 	}
-	
-	
+
 	@Test(dataProvider = "LoginData")
-  public void validLogin(String strUser, String strPwd) {
+	public void validLogin(String strUser, String strPwd) {
 		driver.get(prop.getProperty("URL"));
 		driver.findElement(By.id("username")).sendKeys(strUser);
 		driver.findElement(By.name("password")).sendKeys(strPwd);
@@ -53,15 +51,15 @@ public class LoginTest {
 		boolean isValid = driver.findElement(By.cssSelector("div.flash.success")).isDisplayed();
 		Assert.assertTrue(isValid);
 //		driver.quit();
-  	}
-	
-	@DataProvider(name="LoginData")
-	public Object[][] getData() throws CsvValidationException, IOException{
-		String path = System.getProperty("user.dir")+"//src//test//resources//TestData//LoginData.csv";
+	}
+
+	@DataProvider(name = "LoginData")
+	public Object[][] getData() throws CsvValidationException, IOException {
+		String path = System.getProperty("user.dir") + "//src//test//resources//TestData//LoginData.csv";
 		CSVReader reader = new CSVReader(new FileReader(path));
 		String cols[];
 		ArrayList<Object> dataList = new ArrayList<Object>();
-		while((cols = reader.readNext())!= null) {
+		while ((cols = reader.readNext()) != null) {
 			Object record[] = { cols[0], cols[1] };
 			dataList.add(record);
 		}

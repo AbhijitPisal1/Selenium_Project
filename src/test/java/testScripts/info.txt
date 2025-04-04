@@ -1,0 +1,22 @@
+actions that can be performed for keyboard and mouse actions
+- right click 
+- double click
+- drag and drop actions using mouse
+- move mouse/hover over an element
+- send keys (enter some text into text box)
+
+how ?
+Selenium has a in-built class called "Actions"
+- contains  methods to perform above actions
+- Action class use the "in-built" method so it is easy to use
+
+
+various methods of actions class and their functions
+click(): clicks at the current location.
+doubleClick(): performs a double-click at the current mouse location.
+contextClick(): performs a right-click at the current mouse location.
+dragAndDrop(WebElement source, WebElement target): drags an element from the source location and drops in the target location.
+moveToElement(WebElement target): moves to the target element.
+keyUp(WebElement target, java.lang.CharSequence key): performs a key release after focusing on the target element
+keyDown(WebElement target, java.lang.CharSequence key): performs a key press after focusing on the target element
+sendKeys(WebElement target, java.lang.CharSequence… keys): types the value.
