@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testScripts.LoginTest">
+      <class name="testScripts.ChromeDevToolsTest">
         <methods>
-          <include name="setup"/>
-          <include name="validLogin" invocation-numbers="1 2"/>
+          <include name="Setup"/>
+          <include name="GeoLocationTest"/>
         </methods>
-      </class> <!-- testScripts.LoginTest -->
+      </class> <!-- testScripts.ChromeDevToolsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
