@@ -1,0 +1,22 @@
+Selenium Grid Setup 
+1. Standalone : Single machine registered as a hub and a node
+
+2. Hub and Node : Single hub and multiple nodes on different machines and registered to the hub
+
+3. Distributed : Run the components of Selenium Grid individually as separate processes
+
+4. Docker : RUn the Selenium grid with docker and use the docker for creating new instances
+
+*** Steps to follow ***
+
+- download the selenium grid jar file from official location "https://www.selenium.dev/downloads/"
+- open command prompt and run below command as per the requirements
+
+a) To check local host IP for standalone use this in cmd 
+ java -jar selenium-server-4.31.0.jar standalone --selenium-manager true
+  
+ b) for hub and node, initiate hub using cmd command
+ 	java -jar selenium-server-4.31.0.jar hub
+ 
+	then create note by running command in new cmd session
+ 	java -jar selenium-server-4.31.0.jar node --selenium-manager true
