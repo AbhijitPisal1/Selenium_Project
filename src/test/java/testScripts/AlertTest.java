@@ -20,7 +20,7 @@ public class AlertTest {
 		driver.findElement(By.id("alertBtn")).click();
 		Alert alert = driver.switchTo().alert();
 		System.out.println(alert.getText());
-		Assert.assertEquals(alert.getText(), "I am an alert box!"); // this is hard asser- if it fails script will stop
+		Assert.assertEquals(alert.getText(), "I am an alert box!"); // this is hard assert- if it fails script will stop
 		alert.accept();
 
 		driver.findElement(By.id("confirmBtn")).click();
@@ -37,7 +37,7 @@ public class AlertTest {
 		prompt.sendKeys("Hello Welcome");
 		prompt.accept();
 
-		softasserts.assertAll(); // if any of teh soft asserts fail, it will mark entire run as failed even
+		softasserts.assertAll(); // if any of the soft asserts fail, it will mark entire run as failed even
 									// though entire script has ran completely
 
 		driver.quit();
