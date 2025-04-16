@@ -65,10 +65,10 @@ public class LoginTestDataObjectRepo {
 		ArrayList<Object> dataList = new ArrayList<Object>();
 		while ((cols = reader.readNext()) != null) {
 			Object record[] = { cols[0], cols[1] };
-			dataList.add(record);
+			dataList.add(record);	// Add the record to the dataList
 		}
 		reader.close();
-		return dataList.toArray(new Object[dataList.size()][]);
+		return dataList.toArray(new Object[dataList.size()][]);		// Convert the ArrayList to an Object array
 	}
 
 	// To use excel as objectRepo

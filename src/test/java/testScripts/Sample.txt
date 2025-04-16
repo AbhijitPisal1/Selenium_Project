@@ -288,7 +288,20 @@ Answer: "In TestNG, you can specify dependencies between test methods using the 
 This ensures that one test method is executed only if another test method passes.
 
 
+Q: What is TestNG?
 
+A:
+TestNG is a popular testing framework for Java, designed to simplify the testing process. It stands for Test Next Generation and is inspired by JUnit, but it offers additional features that make it more flexible and powerful for various testing needs. Some of the key features of TestNG include:
+
+Annotations: TestNG uses annotations (like @Test, @BeforeSuite, @AfterMethod, etc.) to define setup, test, and teardown steps, making test scripts easy to understand and maintain.
+
+Parallel Test Execution: TestNG supports parallel test execution, which helps speed up testing when you have multiple test cases.
+
+Grouping and Prioritization: It allows grouping of test cases and setting priorities, enabling tests to be organized and run in a specific order.
+
+Data-driven Testing: TestNG supports parameterization and data providers, allowing you to run the same test with different sets of input data.
+
+Flexible Reporting: It provides detailed HTML and XML reports to help analyze test results easily.
 
 1. What is the Page Object Model (POM) and why is it used in Selenium?
 Answer: "The Page Object Model (POM) is a design pattern in Selenium that promotes the creation of separate classes for each webpage or component within a web application. This pattern helps to reduce code duplication, improve test maintenance, and increase test readability. In POM, each page is represented as a class, and each element on that page is represented by a field or method. This abstraction allows for easier modifications to the UI without needing to update all test scripts."
