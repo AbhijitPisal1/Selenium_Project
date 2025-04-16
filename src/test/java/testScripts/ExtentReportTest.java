@@ -25,13 +25,15 @@ public class ExtentReportTest {
 	WebDriver driver;
 	/**
 	 * Create the objects for classes ExtentSparkReporter, ExtentReports, and
-	 * ExtentTest classes. The ExtentReports class generates HTML reports based on
-	 * the path provided in the ExtentSparkReporter class. ExtentReports uses this
-	 * path by mapping itself to the ExtentSparkReporter object using the
-	 * attachReporter() method. This is used to create an HTML file and accepts a
-	 * file path to the directory where the output should be saved. The ExtentTest
-	 * class logs the test steps in the HTML file to generate a detailed report. The
-	 * ExtentReports and ExtentTest classes are used with built-in methods.
+	 * ExtentTest classes. 
+	 * The ExtentReports class generates HTML reports based on the path provided 
+	 * in the ExtentSparkReporter class.
+	 * ExtentReports uses this path by mapping itself to the ExtentSparkReporter object using the
+	 * attachReporter() method. 
+	 * This is used to create an HTML file and accepts a file path to the directory 
+	 * where the output should be saved.
+	 * The ExtentTest class logs the test steps in the HTML file to generate a detailed report. 
+	 * The ExtentReports and ExtentTest classes are used with built-in methods.
 	 */
 	ExtentReports extentReports;
 	ExtentSparkReporter spark;
@@ -41,8 +43,15 @@ public class ExtentReportTest {
 	public void setupExtent() {
 //		Initialize the extentSparkReporter object by passing the location for the generated HTML report.
 		extentReports = new ExtentReports();
-		spark = new ExtentSparkReporter("test-output/SparkReport.html").viewConfigurer().viewOrder().as(
-				new ViewName[] { ViewName.DASHBOARD, ViewName.TEST, ViewName.AUTHOR, ViewName.DEVICE, ViewName.LOG })
+		spark = new ExtentSparkReporter("test-output/SparkReport.html")
+				.viewConfigurer()
+				.viewOrder().as( new ViewName[] { 
+						ViewName.DASHBOARD, 
+						ViewName.TEST, 
+						ViewName.AUTHOR, 
+						ViewName.DEVICE, 
+						ViewName.LOG 
+						})
 				.apply();
 //		Initialize the extentReports object and attach the extentSparkReporter with it.
 		extentReports.attachReporter(spark);
